@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 dotenv.config();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 const MONGO_URL=process.env.MONGO_URL;
 
 async function createConnection() {
@@ -155,6 +155,6 @@ app.get('/', function (request, response) {
     res.send(listrooms);
   });
 
-  app.listen(PORT || 5000, () => {
-    console.log("App started in port number....:", process.env.PORT || 5000);
+  app.listen(PORT, () => {
+    console.log("App started in port number....:", process.env.PORT);
   });
