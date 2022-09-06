@@ -155,6 +155,4 @@ app.get('/', function (request, response) {
     res.send(listrooms);
   });
 
-  app.listen(PORT, () => {
-    console.log("App started in port number....:",PORT);
-  });
+  app.listen(process.env.PORT || 5000);
