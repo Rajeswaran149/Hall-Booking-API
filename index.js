@@ -10,10 +10,6 @@ dotenv.config();
 const PORT = process.env.PORT;
 const MONGO_URL=process.env.MONGO_URL;
 
-app.listen(PORT || 5000, () => {
-  console.log("App started in port number....:", process.env.PORT || 5000);
-});
-
 async function createConnection() {
   const client = new MongoClient(MONGO_URL);
   await client.connect();
@@ -157,4 +153,8 @@ app.get('/', function (request, response) {
       .toArray();
   
     res.send(listrooms);
+  });
+
+  app.listen(PORT || 5000, () => {
+    console.log("App started in port number....:", process.env.PORT || 5000);
   });
