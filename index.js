@@ -1,11 +1,10 @@
 const express = require("express")
 const {MongoClient, MongoServerError, ObjectId} = require("mongodb")
-const  dotenv = require("dotenv")
+require("dotenv").config()
 
 const app = express();
 
 app.use(express.json());
-dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URL=process.env.MONGO_URL;
