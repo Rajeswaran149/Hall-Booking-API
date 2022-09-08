@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
-const MONGO_URL=process.env.MONGO_URL;
+const MONGO_URL="mongodb+srv://rajeswaran:WQlO2zYL8aK1vtfO@cluster0.eutso4r.mongodb.net/hall-booking?retryWrites=true&w=majority";
 
 async function createConnection() {
   const client = new MongoClient(MONGO_URL);
